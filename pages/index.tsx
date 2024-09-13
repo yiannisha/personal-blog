@@ -19,7 +19,7 @@ const songListLength = 3;
 
 export default function Home() {
   const [currentSong, setCurrentSong] = useState<number>(0);
-  const [paused, setPaused] = useState<boolean>(false);
+  const [paused, setPaused] = useState<boolean>(true);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +32,9 @@ export default function Home() {
         // @ts-expect-error -- IGNORE
         audioRef.current.play();
       }
+      
+      // @ts-expect-error -- IGNORE
+      audioRef.current.play();
     }
   }, []);
 
