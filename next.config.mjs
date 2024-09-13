@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: "https",
+  //       hostname: "media1.tenor.com",
+  //       port: '',
+  //     }
+  //   ]
+  // }
 };
 
 export default nextConfig;
