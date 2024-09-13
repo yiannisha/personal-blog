@@ -1,4 +1,4 @@
-// import Image from 'next/image'
+import Image from 'next/image'
 import React from 'react'
 
 interface MainProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -42,13 +42,13 @@ export default function Main(props: MainProps) {
         </span>
 
         <div className="mt-8 w-full flex flex-col justify-start items-center">
-            {/* <Image
+            <Image
             className="rounded-lg"
-            src="https://media1.tenor.com/m/GB2kusUamFYAAAAC/guts-berserk-guts.gif"
+            src="/assets/guts-berserk-guts.gif"
             alt="gif"
             width={500}
             height={500}
-            /> */}
+            />
             <span className="mt-2 text-center">
                 I am obsessed with writing software, solving problems, building projects
                 <br />
