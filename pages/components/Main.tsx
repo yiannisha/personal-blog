@@ -74,7 +74,7 @@ export default function Main(props: MainProps) {
         <br />
         <div className="px-4 mt-4">
             <span className="text-lg font-bold">
-                <a className="underline text-green-500" target="_blank" href="https://nas-ai.orghttps://github.com/yiannisha/llm-tool/">llm-tool</a>
+                <a className="underline text-green-500" target="_blank" href="https://github.com/yiannisha/llm-tool/">llm-tool</a>
             </span>
             <hr className="mb-2 w-1/2" />
             <li className="text-base">
