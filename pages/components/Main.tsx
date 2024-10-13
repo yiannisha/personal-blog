@@ -19,6 +19,80 @@ export default function Main(props: MainProps) {
         </span>
         <hr className="my-4 w-1/2"/>
         <span className="text-base">
+            A bit of my story:
+        </span>
+        <br />
+        <span className="text-base">
+            Started programming in high school, mostly gamedev stuff.
+        </span>
+        <br />
+        <span className="text-base">
+            Did ~14 months of military service as an EOD, learned python and got my first freelance programming job in the meantime.
+        </span>
+        <br />
+        <span className="text-base">
+            Managed to get into the <a className="underline text-green-500" href="https://www.ece.ntua.gr/en">ECE School</a> of <a className="underline text-green-500" href="https://ntua.gr/el/">NTUA</a> doing a MEng.
+        </span>
+        <br />
+        <hr className="my-4 w-1/2"/>
+        <span className="text-base">
+            After 1.5 year of studying I dropped out to work full-time in different startups including my own.
+        </span>
+        <br />
+        <span className="text-base">
+            In the span of 2 years I managed to work with 4-5 different startups, and co-founding 2 of them.
+        </span>
+        <br />
+        <span className="text-base">
+            I worked in energy (pv), finance, blockchain, manufacturing, computer vision, and AI projects.
+        </span>
+        <br />
+        <span className="text-base">
+            I was basically the tech lead in every single project I worked on.
+        </span>
+        <br />
+        <span className="text-base">
+            At that time working ~12-14 hours a day was the norm. I even had a weekly 18-20 hour session on Fridays.
+        </span>
+        <hr className="my-4 w-1/2"/>
+        <span className="text-base">
+            Eventually I realised that the reason I was doing all these stuff was more out of curiosity and the need to learn new things rather than the money/lifestyle.
+        </span>
+        <br />
+        <span className="text-base">
+            I <strong>LOVE</strong> learning new things and solving problems.
+        </span>
+        <br />
+        <span className="text-base">
+            I truly believe that this is the reason I am on this planet.
+        </span>
+        <br />
+        <span className="text-base">
+            So, I eventually converged onto a single project, <a className="text-green-500 underline" href="https://nas-ai.org">NAS-AI</a> which is by far my favourite project I EVER worked on.
+        </span>
+        <br />
+        <span className="text-base">
+            But I quickly ended up doing a lot non-technical stuff, which I loved but they were an obstacle to my learning.
+        </span>
+        <hr className="my-4 w-1/2"/>
+        <span className="text-base">
+            At that time I realised that in order to do what I value most - learning and solving problems - at it's highest level, I would need to get back to the basics and focus more on learning than on doing, at least for a while.
+        </span>
+        <br />
+        <span className="text-base">
+            So, now I'm back in uni, finishing my MEng and working part-time in a startup that I love.
+        </span>
+        <br />
+        <span className="text-base">
+            Everything that I learned during my time working actually helped me a lot in my studies, to the point that I'm gonna graduate around the time that I would have graduated if I didn't drop out.
+        </span>
+        <br />
+        <span className="text-base">
+            I also consider doing a PhD once I graduate.
+        </span>
+        <br />
+        <hr className="my-4 w-1/2"/>
+        <span className="text-base">
             Currently working as a SWE at <a target="_blank" className="text-xl underline text-green-500" href="https://heyfire.co">HeyFIRE</a>
         </span>
         <br />
@@ -124,7 +198,7 @@ export default function Main(props: MainProps) {
         <div className="px-4 mt-4">
             <span className="text-lg font-bold">
                 <a className="underline text-green-500" target="_blank" href="https://nas-ai.org/">NAS-AI</a> - CTO
-                &nbsp;<span className="text-sm">Feb 2024 - Jul 2023</span>
+                &nbsp;<span className="text-sm">Feb 2024 - Jul 2024</span>
             </span>
             <hr className="mb-2 w-1/2" />
             <li className="text-base">
