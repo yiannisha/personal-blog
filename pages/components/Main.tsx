@@ -76,7 +76,7 @@ export default function Main(props: MainProps) {
         </span>
         <hr className="my-4 w-1/2"/>
         <span className="text-base">
-            At that time I realised that in order to do what I value most - learning and solving problems - at it&apos;s highest level, I would need to get back to the basics and focus more on learning than on doing, at least for a while.
+            At that time I realised that in order to do what I value most - learning and solving problems - at its highest level, I would need to get back to the basics and focus more on learning than on doing, at least for a while.
         </span>
         <br />
         <span className="text-base">
