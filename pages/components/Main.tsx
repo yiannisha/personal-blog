@@ -6,6 +6,24 @@ interface MainProps extends React.HTMLAttributes<HTMLDivElement> {}
 export default function Main(props: MainProps) {
   return (
     <div className={`${props.className} px-2 sm:px-6 md:px-12 py-12`}>
+        <span className="text-4xl font-bold text-violet-600">
+            <span className="text-sm font-medium text-gray-500">{'<'}Oct 2025{'>'}</span>
+            <br />
+            THIS SITE IS OUTDATED, I NEED TO ADD A BUNCH OF NEW STUFF THAT I DID IN THE LAST YEAR
+            <br />
+            <br />
+            I BASICALLY WORK ON ML & ROBOTICS NOW AND I&apos;M OBSESSED WITH CUDA
+            <br />
+            <br />
+            WILL UPDATE SOON
+            <br />
+            <span className="text-sm font-medium text-gray-500">{'</'}Oct 2025{'>'}</span>
+        </span>
+        <br />
+        <br />
+        <span className="text-sm font-medium text-gray-500">{'<'}Sept 2024{'>'}</span>
+        <br />
+        <hr className="my-4 w-1/2"/>
         <span className="text-base">
             Mediocre generalist software engineer, with some experience in hardware stuff as well.
         </span>
@@ -345,6 +363,8 @@ export default function Main(props: MainProps) {
                 VueJS, PHP
             </span>
         </div>
+        <br />
+        <span className="text-sm font-medium text-gray-500">{'</'}Sept 2024{'>'}</span>
     </div>
   )
 }
