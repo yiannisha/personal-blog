@@ -12,7 +12,10 @@ export default function Main(props: MainProps) {
             THIS SITE IS OUTDATED, I NEED TO ADD A BUNCH OF NEW STUFF THAT I DID IN THE LAST YEAR
             <br />
             <br />
-            I BASICALLY WORK ON ML & ROBOTICS NOW AND I&apos;M OBSESSED WITH CUDA
+            I BASICALLY <a href="https://progressiverobotics.ai/" className="underline text-green-500">WORK ON ML & ROBOTICS</a> NOW AND I&apos;M OBSESSED WITH CUDA
+            <br />
+            <br />
+            I ALSO DO INDEPENDENT <a href="https://synkrasis-labs.com/" className="underline text-green-500">LLM AGENT RESEARCH</a>
             <br />
             <br />
             WILL UPDATE SOON
