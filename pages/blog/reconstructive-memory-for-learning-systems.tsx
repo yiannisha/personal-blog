@@ -140,13 +140,6 @@ Even though all of these components might help, there seems to be some standard 
             When a system “remembers”, how much of that output is trace-grounded, and how much is the schema filling in the blanks?
           </p>
           <br />
-          <p>
-            Extending the proposed formalization and investigating the questions forced will help us:
-          </p>
-          <ul className="list-disc pl-6">
-            <li>create a taxonomy of failure modes</li>
-            <li>derive evaluation protocols that score not only correctness, but grounding, uncertainty, and provenance.</li>
-          </ul>
           <br />
           <p className="underline text-green-500">Epilogue</p>
           <p>
