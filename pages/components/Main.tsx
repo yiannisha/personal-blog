@@ -7,6 +7,12 @@ export default function Main(props: MainProps) {
   return (
     <div className={`${props.className} px-2 sm:px-6 md:px-12 py-12`}>
         <span className="text-4xl font-bold text-violet-600">
+            <span className="text-sm font-medium text-gray-500">{'<'}Mar 2026{'>'}</span>
+            <br />
+            JOINED <a href="https://www.toolsforhumanity.com/" className="underline text-green-500">TFH</a> DOING ML & RUST!
+            <br />
+            <span className="text-sm font-medium text-gray-500">{'</'}Mar 2026{'>'}</span>
+            <br />
             <span className="text-sm font-medium text-gray-500">{'<'}Oct 2025{'>'}</span>
             <br />
             THIS SITE IS OUTDATED, I NEED TO ADD A BUNCH OF NEW STUFF THAT I DID IN THE LAST YEAR
