@@ -42,6 +42,10 @@ function sortByDateDesc<T extends { date: string }>(items: T[]) {
 }
 
 export function getFeedProjects(): FeedProject[] {
+  if (!fs.existsSync(PROJECTS_FILE)) {
+    return [];
+  }
+
   const raw = fs.readFileSync(PROJECTS_FILE, "utf8");
   const parsed = JSON.parse(raw) as FeedProject[];
 
@@ -52,6 +56,10 @@ export function getFeedProjects(): FeedProject[] {
 }
 
 export function getFeedEntries(projectIds: Set<string>): FeedEntry[] {
+  if (!fs.existsSync(ENTRIES_DIR)) {
+    return [];
+  }
+
   const filenames = fs
     .readdirSync(ENTRIES_DIR)
     .filter((filename) => filename.endsWith(".md"))
