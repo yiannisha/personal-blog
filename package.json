@@ -4,17 +4,29 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:admin": "ENABLE_FEED_ADMIN=true next dev",
     "build": "next build",
+    "build:admin": "ENABLE_FEED_ADMIN=true next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "feed": "node scripts/feed-admin.mjs"
   },
   "dependencies": {
+    "formidable": "^3.5.4",
+    "gray-matter": "^4.0.3",
+    "katex": "^0.16.42",
     "next": "14.2.10",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^5.7.1",
+    "@types/formidable": "^3.5.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

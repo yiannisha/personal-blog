@@ -1,3 +1,5 @@
+@import "katex/dist/katex.min.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +13,85 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.feed-markdown {
+  @apply text-sm leading-7 text-gray-300;
+}
+
+.feed-markdown h1,
+.feed-markdown h2,
+.feed-markdown h3,
+.feed-markdown h4,
+.feed-markdown h5,
+.feed-markdown h6 {
+  @apply mt-6 font-semibold text-white;
+}
+
+.feed-markdown h1 {
+  @apply text-3xl text-violet-300;
+}
+
+.feed-markdown h2 {
+  @apply text-2xl text-violet-200;
+}
+
+.feed-markdown h3 {
+  @apply text-xl text-violet-100;
+}
+
+.feed-markdown h4 {
+  @apply text-lg;
+}
+
+.feed-markdown p,
+.feed-markdown ul,
+.feed-markdown ol,
+.feed-markdown blockquote,
+.feed-markdown pre {
+  @apply mt-3;
+}
+
+.feed-markdown ul,
+.feed-markdown ol {
+  @apply pl-5;
+}
+
+.feed-markdown ul {
+  @apply list-disc;
+}
+
+.feed-markdown ol {
+  @apply list-decimal;
+}
+
+.feed-markdown a {
+  @apply text-green-500 underline;
+}
+
+.feed-markdown blockquote {
+  @apply border-l-2 border-neutral-700 pl-4 text-gray-400;
+}
+
+.feed-markdown code {
+  @apply rounded bg-neutral-900 px-1.5 py-0.5 text-xs text-gray-200;
+}
+
+.feed-markdown pre {
+  @apply overflow-x-auto rounded-lg border border-neutral-700 bg-neutral-950 p-4;
+}
+
+.feed-markdown pre code {
+  @apply bg-transparent p-0;
+}
+
+.feed-markdown img,
+.feed-markdown video {
+  @apply mt-4 w-full rounded-lg border border-neutral-700;
+}
+
+.feed-markdown hr {
+  @apply my-6 border-neutral-800;
 }
 
 @layer utilities {

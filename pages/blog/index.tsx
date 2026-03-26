@@ -19,7 +19,7 @@ export default function BlogIndex() {
     >
       <main className="max-w-3xl mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-3xl font-bold text-violet-600">Blog</h1>
+          <h1 className="text-3xl font-bold text-violet-600">Blogs</h1>
           <Link href="/" className="text-green-500 underline">Home</Link>
         </div>
         <p className="text-base text-gray-300 mb-6">Thoughts, notes, and experiments.</p>

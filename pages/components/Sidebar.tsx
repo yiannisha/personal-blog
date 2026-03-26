@@ -44,7 +44,11 @@ export default function Sidebar(props: SidebarProps) {
             CURRENT OBSESSIONS
         </span>
         <span className="text-base text-center mb-4 flex flex-row items-center">
-            NNs, CUDA, RUST, LLMs, GPU&nbsp;Architecture, STATS
+            ML&RL, CUDA, RUST, GPU&nbsp;Architecture,
+            <br />
+            real-world operations research problems for warehouses and factories,
+            <br />
+            continual learning, memory systems and robotic agents
         </span>
 
         <span className="text-base text-center my-4 mb-2 flex flex-row items-center underline">
@@ -52,24 +56,6 @@ export default function Sidebar(props: SidebarProps) {
         </span>
         <span className="text-base text-center mb-4 flex flex-row items-center">
             -
-        </span>
-
-        <span className="text-base text-center my-4 mb-2 flex flex-row items-center underline">
-            THINGS I HAVE QUESTIONABLE EXPERIENCE IN
-        </span>
-        <span className="text-base text-center mb-2 flex flex-row items-center">
-            FULL-STACK<br />(REACT, NEXTJS, FLASK, DJANGO, NODEJS)
-        </span>
-        <span className="text-base text-center mb-2 flex flex-row items-center">
-            CUML, SCIKIT, XGBOOST, PYTORCH
-        </span>
-        <span className="text-base text-center mb-2 flex flex-row items-center">
-            RUST
-        </span>
-        <span className="text-base text-center mb-2 flex flex-rown flex-wrap justify-center items-center">
-            <span className="line-through">
-                SOLIDITY
-            </span>&nbsp;<span className="text-sm">(NOT INTO CRYPTO ANYMORE)</span>
         </span>
     </div>
   )
