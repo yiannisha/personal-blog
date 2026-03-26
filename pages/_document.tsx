@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>SISYPHUS</title>
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="preload"
