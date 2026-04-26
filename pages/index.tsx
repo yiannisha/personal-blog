@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import katex from "katex";
 import { useEffect, useRef, useState } from "react";
 
 const backgroundAudio = {
@@ -15,36 +16,44 @@ const focusAreas = [
 
 const selectedWork = [
   {
-    title: "Research Feed",
-    type: "Ongoing",
+    title: "Orb",
+    company: "Tools for Humanity",
     period: "Current",
-    href: "/research-feed",
+    model: "orb",
     summary:
-      "A running log of research notes, active projects, and work around memory, continual learning, and real-world systems.",
+      "ML and systems work around the Orb stack, spanning robotics-adjacent software, deployment-heavy inference paths, and performance-sensitive infrastructure.",
   },
   {
-    title: "llm-tool",
-    type: "Open Source",
-    period: "Python + Rust",
-    href: "https://github.com/yiannisha/llm-tool/",
+    title: "Custom GPU-Palletizing RL Environments",
+    company: "Progressive Robotics",
+    period: "2025 - 2026",
+    model: "stack",
     summary:
-      "A library for turning Python functions into LLM tool definitions, with Rust used where parsing speed and low overhead matter.",
+      "Designed and optimized custom reinforcement learning environments for palletizing, pushing CPU bottlenecks onto the GPU and making training loops materially faster.",
   },
   {
-    title: "RobinStore",
-    type: "Product",
-    period: "Best MVP Award",
-    href: "/old-index",
+    title: "Teleoperation Infrastructure",
+    company: "Delian",
+    period: "2025",
+    model: "frame",
     summary:
-      "A supermarket product scraping and matching system built around real-time data collection, retrieval, and embedding-based similarity.",
+      "Built the low-latency teleoperation stack for deployed systems, including streaming, service orchestration, and the infrastructure needed to keep the loop responsive.",
   },
   {
-    title: "NAS-AI",
-    type: "Company",
-    period: "Co-Founder / CTO",
-    href: "/old-index",
+    title: "NVision",
+    company: "NAS-AI (Co-Founder / CTO)",
+    period: "2024",
+    model: "beam",
     summary:
-      "Manufacturing-focused computer vision and streaming systems built for live production environments and edge deployment.",
+      "A manufacturing computer vision system built for live production lines, focused on edge deployment, real-time streaming, and practical operational value.",
+  },
+  {
+    title: "Robin",
+    company: "RobinStore (Co-Founder / CTO)",
+    period: "2023",
+    model: "grid",
+    summary:
+      "A supermarket product scraping and matching system for large-scale catalog retrieval, normalization, and embedding-based product similarity.",
   },
 ];
 
@@ -53,6 +62,75 @@ const links = [
   { href: "/research-feed", label: "Research Feed" },
   { href: "/old-index", label: "Old Index" },
 ];
+
+const lifeObjectiveEquation = katex.renderToString(
+  String.raw`\max_\pi \; \mathbb{E}_\pi \left[\sum_t \gamma^t \mathbf{1}\{\text{shipped}_t\}\,\text{HumanUtility}_t\right]`,
+  {
+    displayMode: true,
+    throwOnError: false,
+  },
+);
+
+const realizedReturnEquation = katex.renderToString(
+  String.raw`\sum_t \gamma^t \mathbf{1}\{\text{shipped}_t = 1 \;\wedge\; \text{HumanUtility}_t > 0\}`,
+  {
+    displayMode: false,
+    throwOnError: false,
+  },
+);
+
+function WorkModel({ type }: { type: string }) {
+  if (type === "orb") {
+    return (
+      <div className="relative h-24 w-24">
+        <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_32%_28%,rgba(255,255,255,0.92),rgba(126,147,255,0.42)_18%,rgba(33,44,90,0.7)_48%,rgba(4,6,16,0.08)_74%)] shadow-[0_0_60px_rgba(117,136,255,0.24)]" />
+        <div className="absolute inset-x-4 bottom-1 h-4 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(113,134,255,0.3),transparent_70%)] blur-md" />
+      </div>
+    );
+  }
+
+  if (type === "stack") {
+    return (
+      <div className="relative h-24 w-24 [perspective:900px]">
+        <div className="absolute left-3 top-10 h-11 w-14 -rotate-[24deg] rounded-lg border border-cyan-200/10 bg-[linear-gradient(180deg,rgba(132,225,255,0.4),rgba(19,33,53,0.9))] shadow-[0_10px_40px_rgba(62,177,255,0.15)] [transform:rotateX(68deg)_rotateZ(-14deg)]" />
+        <div className="absolute left-7 top-6 h-11 w-14 -rotate-[24deg] rounded-lg border border-cyan-200/10 bg-[linear-gradient(180deg,rgba(132,225,255,0.32),rgba(16,25,43,0.92))] [transform:rotateX(68deg)_rotateZ(-14deg)]" />
+        <div className="absolute left-11 top-2 h-11 w-14 -rotate-[24deg] rounded-lg border border-cyan-200/10 bg-[linear-gradient(180deg,rgba(132,225,255,0.24),rgba(13,19,35,0.96))] [transform:rotateX(68deg)_rotateZ(-14deg)]" />
+      </div>
+    );
+  }
+
+  if (type === "frame") {
+    return (
+      <div className="relative h-24 w-24 [perspective:900px]">
+        <div className="absolute left-5 top-4 h-14 w-14 rounded-sm border border-white/20 [transform:rotateX(58deg)_rotateY(-18deg)]" />
+        <div className="absolute left-8 top-8 h-14 w-14 rounded-sm border border-white/10 [transform:rotateX(58deg)_rotateY(-18deg)]" />
+        <div className="absolute left-5 top-4 h-14 w-14 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent_60%)] [transform:rotateX(58deg)_rotateY(-18deg)]" />
+      </div>
+    );
+  }
+
+  if (type === "beam") {
+    return (
+      <div className="relative h-24 w-24 [perspective:900px]">
+        <div className="absolute left-8 top-3 h-18 w-8 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.75),rgba(255,161,97,0.46)_22%,rgba(58,22,11,0.94)_100%)] shadow-[0_0_40px_rgba(255,138,76,0.2)] [transform:rotateX(62deg)_rotateZ(20deg)]" />
+        <div className="absolute left-4 top-14 h-px w-16 bg-white/10" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative h-24 w-24 [perspective:900px]">
+      <div className="absolute left-4 top-4 grid grid-cols-3 gap-1 [transform:rotateX(58deg)_rotateZ(-18deg)]">
+        {Array.from({ length: 9 }).map((_, index) => (
+          <span
+            key={index}
+            className="h-4 w-4 rounded-sm border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(18,22,35,0.92))]"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -183,14 +261,32 @@ export default function Home() {
       <main className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col justify-between px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
         <header className="flex items-center justify-between border-b border-white/10 pb-5 text-xs uppercase tracking-[0.22em] text-zinc-500">
           <span>Yiannis Hadjiyianni</span>
-          <a
-            href="https://github.com/yiannisha"
-            target="_blank"
-            rel="noreferrer"
-            className="transition hover:text-zinc-200"
-          >
-            GitHub
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/yiannisha"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-zinc-200"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/yiannis-hadjiyianni-36294b1b1/"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-zinc-200"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://x.com/yiannisha"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-zinc-200"
+            >
+              X
+            </a>
+          </div>
         </header>
 
         <section className="grid gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16 lg:py-24">
@@ -199,14 +295,30 @@ export default function Home() {
               ML Systems / Robotics / Performance
             </p>
             <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-[0.98] text-white sm:text-7xl">
-              Dark, direct,
+              i care about
               <br />
-              and built around the work.
+              building things that matter.
             </h1>
             <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">
-              I work on robotics software, inference optimization, GPU-heavy ML
+              i work on robotics software, inference optimization, GPU-heavy ML
               systems, and research around continual learning, memory and (random nerd-snipe) neural combinatorial optimization for real-world operation research use cases.
             </p>
+
+            <div className="mt-8 max-w-3xl border-l border-white/10 pl-5">
+              <p className="text-sm uppercase tracking-[0.24em] text-zinc-500">
+                Life Objective
+              </p>
+              <p className="mt-3 text-base text-zinc-300">
+                My life&apos;s RL objective is
+              </p>
+              <div
+                className="mt-4 overflow-x-auto text-zinc-100 [&_.katex-display]:my-0 [&_.katex]:text-[1.02rem] [&_.mord]:text-zinc-100"
+                dangerouslySetInnerHTML={{ __html: lifeObjectiveEquation }}
+              />
+              <p className="mt-4 text-base leading-8 text-zinc-300 sm:text-lg">
+                ship things that matter, over a long horizon.
+              </p>
+            </div>
 
             <div className="mt-10 grid max-w-xl gap-5 border-t border-white/10 pt-6 sm:grid-cols-2">
               <div>
@@ -274,41 +386,36 @@ export default function Home() {
               Some of my work
             </p>
             <h2 className="mt-4 text-2xl font-semibold text-white sm:text-3xl">
-              Project-oriented work, not just roles.
+              Some of my work
             </h2>
-            <p className="mt-4 text-sm leading-7 text-zinc-400">
-              A short list in roughly reverse chronological order, closer to the
-              things I actually built or pushed forward.
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-400">
+              realized return so far.
             </p>
+            <div className="mt-3 max-w-2xl text-sm leading-7 text-zinc-500">
+              <span>the discounted sum of things where </span>
+              <span
+                className="mx-1 text-zinc-300 [&_.katex]:text-[0.98rem]"
+                dangerouslySetInnerHTML={{ __html: realizedReturnEquation }}
+              />
+            </div>
           </div>
 
           <div className="mt-10 grid gap-0 border-t border-white/10">
             {selectedWork.map((item) => {
-              const isInternal = item.href.startsWith("/");
-
               return (
                 <article
                   key={`${item.title}-${item.period}`}
-                  className="grid gap-4 border-b border-white/10 py-6 sm:grid-cols-[minmax(0,1fr)_160px]"
+                  className="grid gap-6 border-b border-white/10 py-6 sm:grid-cols-[96px_minmax(0,1fr)_160px] sm:items-center"
                 >
+                  <div className="flex items-center justify-start sm:justify-center">
+                    <WorkModel type={item.model} />
+                  </div>
+
                   <div>
-                    {isInternal ? (
-                      <Link
-                        href={item.href}
-                        className="text-lg font-medium text-white transition hover:text-zinc-300"
-                      >
-                        {item.title}
-                      </Link>
-                    ) : (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-lg font-medium text-white transition hover:text-zinc-300"
-                      >
-                        {item.title}
-                      </a>
-                    )}
+                    <h3 className="text-lg font-medium text-white">{item.title}</h3>
+                    <p className="mt-1 text-xs uppercase tracking-[0.22em] text-zinc-500">
+                      {item.company}
+                    </p>
                     <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-400">
                       {item.summary}
                     </p>
@@ -316,7 +423,7 @@ export default function Home() {
 
                   <div className="space-y-1 text-left sm:text-right">
                     <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">
-                      {item.type}
+                      Project
                     </p>
                     <p className="text-sm text-zinc-300">{item.period}</p>
                   </div>
