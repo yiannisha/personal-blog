@@ -5,14 +5,33 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #020309;
+  --foreground: #f4f4f5;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(2, 3, 9, 0.1) 0%, rgba(2, 3, 9, 0.98) 72%),
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 30%);
+}
+
+.hero-background {
+  transform: scale(1.04);
+  filter: saturate(0) contrast(1.1) brightness(0.42);
 }
 
 .feed-markdown {
